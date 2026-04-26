@@ -4,7 +4,7 @@ import { HOW_IT_WORKS } from '@/lib/constants'
 
 export default function HowItWorks() {
   return (
-    <section className="py-24 px-4 bg-brand-card">
+    <section id="como-funciona" className="py-24 px-4 bg-brand-card">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -15,12 +15,16 @@ export default function HowItWorks() {
         >
           <span className="text-primary text-sm font-bold tracking-widest uppercase">Cómo funciona</span>
           <h2 className="text-4xl sm:text-5xl font-black mt-3">
-            Simple. Rápido. <span className="text-gradient">Infalible.</span>
+            3 pasos.{' '}
+            <span className="text-gradient">Rueda arriba. A rodar.</span>
           </h2>
+          <p className="text-gray-400 text-lg mt-4 max-w-xl mx-auto">
+            En menos de 2 minutos tienes la rueda elevada y puedes parchar,
+            aceitar la cadena o hacer cualquier reparación.
+          </p>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8 relative">
-          {/* connector line */}
           <div className="hidden md:block absolute top-12 left-[calc(16.66%+1rem)] right-[calc(16.66%+1rem)] h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
 
           {HOW_IT_WORKS.map((item, i) => (
@@ -43,6 +47,30 @@ export default function HowItWorks() {
             </motion.div>
           ))}
         </div>
+
+        {/* use cases visual */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mt-16 grid sm:grid-cols-3 gap-4"
+        >
+          {[
+            { emoji: '🔧', title: 'Parchar llanta', detail: 'Rueda trasera elevada · saca, parcha, monta y a rodar' },
+            { emoji: '⛓️', title: 'Aceitar cadena', detail: 'Gira la rueda a mano · lubricante uniforme en toda la cadena' },
+            { emoji: '🛠️', title: 'Reparaciones', detail: 'Frenos, pastillas, rodamientos · tú decides dónde paras' },
+          ].map(u => (
+            <div
+              key={u.title}
+              className="bg-brand-dark border border-brand-border rounded-xl p-5 text-center hover:border-primary/30 transition-colors"
+            >
+              <div className="text-3xl mb-3">{u.emoji}</div>
+              <p className="text-white font-bold mb-1">{u.title}</p>
+              <p className="text-gray-400 text-xs leading-relaxed">{u.detail}</p>
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   )

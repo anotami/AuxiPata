@@ -1,9 +1,9 @@
 'use client'
 import { motion } from 'framer-motion'
-import { Ruler, Shield, Zap, Layers } from 'lucide-react'
+import { Wrench, Ruler, Shield, Layers } from 'lucide-react'
 import { FEATURES } from '@/lib/constants'
 
-const ICONS = { Ruler, Shield, Zap, Layers }
+const ICONS = { Wrench, Ruler, Shield, Layers }
 
 export default function Features() {
   return (
@@ -18,12 +18,12 @@ export default function Features() {
         >
           <span className="text-primary text-sm font-bold tracking-widest uppercase">Características</span>
           <h2 className="text-4xl sm:text-5xl font-black mt-3">
-            Ingeniería local para{' '}
-            <span className="text-gradient">terreno local.</span>
+            Diseñado para el{' '}
+            <span className="text-gradient">Peru real.</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto mt-4">
-            No es un accesorio genérico. Está diseñado para el polvo de Canta,
-            la arena de Asia y la piedra suelta de los Andes.
+            No es un soporte de garaje. Está diseñado para reparar en tierra, barro
+            y piedra — las condiciones reales de las rutas peruanas.
           </p>
         </motion.div>
 

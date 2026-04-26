@@ -1,9 +1,15 @@
 'use client'
 import { motion } from 'framer-motion'
-import { MessageCircle, ChevronDown } from 'lucide-react'
+import { MessageCircle, ChevronDown, Wrench, Link2, Zap } from 'lucide-react'
 import { BRAND } from '@/lib/constants'
 import { buildWhatsAppUrl } from '@/lib/utils'
 import VisitCounter from './VisitCounter'
+
+const CHIPS = [
+  { icon: Wrench, label: 'Parcha en ruta' },
+  { icon: Link2,  label: 'Aceita la cadena' },
+  { icon: Zap,    label: 'Repara en terreno' },
+]
 
 export default function Hero() {
   const waUrl = buildWhatsAppUrl({
@@ -16,7 +22,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[92vh] flex items-center justify-center overflow-hidden"
+      className="relative min-h-[93vh] flex items-center justify-center overflow-hidden"
       style={{
         background: 'radial-gradient(ellipse at 60% 50%, #1a0800 0%, #0A0A0A 60%)',
       }}
@@ -44,30 +50,49 @@ export default function Hero() {
           transition={{ duration: 0.3, delay: 0.1 }}
           className="inline-flex items-center gap-2 bg-primary/15 border border-primary/30 text-primary text-xs font-bold tracking-widest uppercase rounded-full px-4 py-1.5 mb-6"
         >
-          🇵🇪 Fabricado en Lima · Hecho para el Perú
+          🇵🇪 Tu taller portátil · Para las rutas peruanas
         </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-5xl sm:text-6xl md:text-7xl font-black leading-tight mb-6"
+          className="text-5xl sm:text-6xl md:text-7xl font-black leading-tight mb-4"
         >
-          El pata que{' '}
-          <span className="text-gradient">nunca te</span>
+          ¿Pinchazo en la{' '}
+          <span className="text-gradient">sierra?</span>
           <br />
-          <span className="text-gradient">deja caer.</span>
+          Tu pata{' '}
+          <span className="text-gradient">tiene la solución.</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35 }}
-          className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto mb-8 leading-relaxed"
         >
-          Soporte telescópico portátil para estacionar tu moto en cualquier terreno.
-          Tierra, arena, piedra, fango — no hay superficie que lo detenga.
+          El AuxiPata eleva la rueda de tu moto para que puedas parchar, aceitar
+          la cadena y reparar en cualquier ruta — sin buscar suelo plano, sin esperar auxilio.
         </motion.p>
+
+        {/* use case chips */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.45 }}
+          className="flex flex-wrap justify-center gap-3 mb-10"
+        >
+          {CHIPS.map(({ icon: Icon, label }) => (
+            <div
+              key={label}
+              className="flex items-center gap-2 bg-white/8 border border-white/15 rounded-full px-4 py-1.5 text-sm text-gray-300 font-medium"
+            >
+              <Icon size={14} className="text-primary" />
+              {label}
+            </div>
+          ))}
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -96,7 +121,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-16 flex justify-center"
+          className="mt-14 flex justify-center"
         >
           <a href="#problema" className="text-gray-600 hover:text-gray-400 transition-colors animate-float">
             <ChevronDown size={28} />

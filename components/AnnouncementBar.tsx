@@ -2,10 +2,10 @@
 import { useState, useEffect } from 'react'
 
 const MESSAGES = [
-  '🏍️ Envío gratis en Lima Metropolitana en todos los modelos',
-  '💳 Acepta Yape, Plin y pago contra entrega',
-  '🇵🇪 Fabricado en Lima para las rutas peruanas',
-  '⚡ Entrega 24-48h en Lima · 3-5 días a provincias',
+  '🔧 Parcha tu llanta en cualquier ruta sin buscar un taller',
+  '⛓️ Aceita la cadena en el camino — rueda elevada, lista en 5 minutos',
+  '🇵🇪 Fabricado en Lima para las rutas peruanas · Envío gratis Lima',
+  '💳 Acepta Yape, Plin y pago contra entrega · Entrega 24-48h',
 ]
 
 export default function AnnouncementBar() {
