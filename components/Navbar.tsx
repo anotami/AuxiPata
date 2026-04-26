@@ -8,6 +8,7 @@ const LINKS = [
   { href: '#caracteristicas', label: 'Características' },
   { href: '#lineas', label: 'Líneas' },
   { href: '#testimonios', label: 'Testimonios' },
+  { href: '#talleres', label: 'Talleres', highlight: true },
   { href: '#faq', label: 'FAQ' },
 ]
 
@@ -42,7 +43,10 @@ export default function Navbar() {
             <li key={l.href}>
               <a
                 href={l.href}
-                className="text-sm text-gray-400 hover:text-white transition-colors font-medium"
+                className={l.highlight
+                  ? 'text-sm text-accent hover:text-white transition-colors font-bold'
+                  : 'text-sm text-gray-400 hover:text-white transition-colors font-medium'
+                }
               >
                 {l.label}
               </a>
@@ -75,7 +79,10 @@ export default function Navbar() {
                 <a
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="block py-2 text-gray-300 hover:text-white text-sm font-medium"
+                  className={l.highlight
+                    ? 'block py-2 text-accent font-bold text-sm'
+                    : 'block py-2 text-gray-300 hover:text-white text-sm font-medium'
+                  }
                 >
                   {l.label}
                 </a>

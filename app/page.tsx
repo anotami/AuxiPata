@@ -11,6 +11,7 @@ import VideoDemo from '@/components/VideoDemo'
 import Testimonials from '@/components/Testimonials'
 import Gallery from '@/components/Gallery'
 import Pricing from '@/components/Pricing'
+import Talleres from '@/components/Talleres'
 import FAQ from '@/components/FAQ'
 import Footer from '@/components/Footer'
 
@@ -30,6 +31,7 @@ export default function Home() {
       <Testimonials />
       <Gallery />
       <Pricing />
+      <Talleres />
       <FAQ />
       <Footer />
     </main>
