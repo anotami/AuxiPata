@@ -1,8 +1,13 @@
+// ================================================
+// CONFIGURACIÓN RÁPIDA — cambia tus datos aquí
+// ================================================
+const WHATSAPP_NUMBER = '51932900134' // código país + número, sin el +
+
 export const BRAND = {
   name: 'AuxiPata',
   slogan: 'El pata que nunca te deja caer.',
   tagline: 'Soporte telescópico para cualquier terreno. Fabricado en Lima.',
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? '51999999999',
+  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? WHATSAPP_NUMBER,
   instagram: 'auxipata',
   tiktok: 'auxipata',
   facebook: 'auxipata',
