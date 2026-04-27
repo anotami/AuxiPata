@@ -2,17 +2,18 @@ import { Instagram, Youtube, Facebook, Mail } from 'lucide-react'
 import { BRAND } from '@/lib/constants'
 
 const NAV = [
-  { href: '#producto', label: 'Producto' },
+  { href: '#como-funciona', label: 'Cómo funciona' },
   { href: '#caracteristicas', label: 'Características' },
   { href: '#lineas', label: 'Líneas' },
   { href: '#testimonios', label: 'Testimonios' },
   { href: '#precios', label: 'Precios' },
+  { href: '#talleres', label: 'Talleres' },
   { href: '#faq', label: 'FAQ' },
 ]
 
 const SOCIAL = [
   { Icon: Instagram, href: `https://instagram.com/${BRAND.instagram}`, label: 'Instagram' },
-  { Icon: Youtube, href: `https://youtube.com/@${BRAND.tiktok}`, label: 'YouTube' },
+  { Icon: Youtube, href: `https://youtube.com/@${BRAND.instagram}`, label: 'YouTube' },
   { Icon: Facebook, href: `https://facebook.com/${BRAND.facebook}`, label: 'Facebook' },
   { Icon: Mail, href: `mailto:${BRAND.email}`, label: 'Email' },
 ]

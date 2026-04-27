@@ -4,7 +4,7 @@ import { Menu, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const LINKS = [
-  { href: '#producto', label: 'Producto' },
+  { href: '#como-funciona', label: 'Cómo funciona' },
   { href: '#caracteristicas', label: 'Características' },
   { href: '#lineas', label: 'Líneas' },
   { href: '#testimonios', label: 'Testimonios' },

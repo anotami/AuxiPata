@@ -9,80 +9,72 @@ import { useState } from 'react'
 // =============================================================
 const PHOTOS = [
   {
-    // BMW R1250GS Adventure — moto grande en ruta
-    src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=85',
-    alt: 'BMW R1250GS Adventure en ruta de tierra',
-    label: 'BMW GS Adventure',
-    terrain: 'Aventura',
-    badge: 'BMW',
-    badgeColor: '#1C69D4',
-  },
-  {
-    // BMW GS caída / volcada en camino de tierra
     src: 'https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=900&q=85',
-    alt: 'Moto BMW GS caída en camino de tierra sin soporte',
-    label: 'Moto caída en tierra',
-    terrain: 'Problema real',
-    badge: 'Caída',
+    alt: 'Moto adventure detenida en camino de tierra — llanta pinchada esperando parche',
+    label: 'Pinchazo en la bajada de Canta',
+    terrain: 'Lima · 80km del taller',
+    badge: 'Parche en ruta',
     badgeColor: '#DC2626',
   },
   {
-    // KTM 1290 Super Adventure naranja en barro
     src: 'https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=900&q=85',
-    alt: 'KTM 1290 Super Adventure en camino de barro offroad',
-    label: 'KTM 1290 Super Adventure',
-    terrain: 'Barro',
-    badge: 'KTM',
+    alt: 'KTM Adventure con rueda elevada aceitando la cadena en ruta de tierra',
+    label: 'Cadena aceitada · Rueda girando a mano',
+    terrain: 'KTM Adventure · Antioquía',
+    badge: 'Aceitar cadena',
     badgeColor: '#FF6B00',
   },
   {
-    // Moto grande volcada / tirada en pendiente de tierra
-    src: 'https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=900&q=85',
-    alt: 'Moto adventure caída en pendiente de tierra suelta',
-    label: 'Pendiente peligrosa',
-    terrain: 'Piedra / Caída',
-    badge: 'Caída',
-    badgeColor: '#DC2626',
-  },
-  {
-    // BMW GS o KTM en ruta de sierra peruana
-    src: 'https://images.unsplash.com/photo-1609752272551-2e5ca1cc1fd6?auto=format&fit=crop&w=900&q=85',
-    alt: 'Moto adventure grande en ruta de sierra andina',
-    label: 'Sierra Andina',
-    terrain: 'Altitude / Grava',
-    badge: 'BMW GS',
-    badgeColor: '#1C69D4',
-  },
-  {
-    // KTM Adventure naranja en arena / playa
-    src: 'https://images.unsplash.com/photo-1622742031553-3e7a5f8b1e93?auto=format&fit=crop&w=900&q=85',
-    alt: 'KTM Adventure en arena de playa — pata original hundida',
-    label: 'Arena — sin AuxiPata',
-    terrain: 'Arena',
-    badge: 'KTM',
-    badgeColor: '#FF6B00',
-  },
-  {
-    // Moto grande caída de lado en camino de montaña
-    src: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=900&q=85',
-    alt: 'Moto adventure caída de lado en camino de montaña',
-    label: 'Caída en montaña',
-    terrain: 'Montaña / Caída',
-    badge: 'Caída',
-    badgeColor: '#DC2626',
-  },
-  {
-    // BMW o KTM estable con soporte — con AuxiPata
-    src: 'https://images.unsplash.com/photo-1524634126442-357e0eac3c14?auto=format&fit=crop&w=900&q=85',
-    alt: 'Moto adventure grande estable con soporte AuxiPata',
-    label: 'Estable con AuxiPata',
-    terrain: 'Aventura',
+    src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=85',
+    alt: 'BMW R1250GS Adventure lista para reparación en sierra peruana con AuxiPata',
+    label: 'BMW GS · Rueda elevada · Lista',
+    terrain: 'BMW R1250GS · Sierra Andina',
     badge: 'Con AuxiPata ✓',
     badgeColor: '#22C55E',
   },
+  {
+    src: 'https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=900&q=85',
+    alt: 'Moto adventure en terreno de piedra suelta — reparación de frenos en ruta',
+    label: 'Pastillas de freno · Piedra suelta',
+    terrain: 'Ruta a Lunahuaná',
+    badge: 'Parche en ruta',
+    badgeColor: '#DC2626',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1609752272551-2e5ca1cc1fd6?auto=format&fit=crop&w=900&q=85',
+    alt: 'Royal Enfield Himalayan en ruta andina con cadena aceitada gracias al AuxiPata',
+    label: 'Himalayan · Cadena lista · A rodar',
+    terrain: 'Royal Enfield · Ruta serrana',
+    badge: 'Con AuxiPata ✓',
+    badgeColor: '#22C55E',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1609429019995-8c40f49535a5?auto=format&fit=crop&w=900&q=85',
+    alt: 'Motociclista preparando herramientas para parchar llanta en terreno de arena',
+    label: 'Arena de Ica · Sin suelo plano',
+    terrain: 'Honda XR · Ica',
+    badge: 'Terreno',
+    badgeColor: '#F59E0B',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=900&q=85',
+    alt: 'KTM 390 Adventure en camino de tierra con llanta pinchada — necesita AuxiPata',
+    label: 'KTM 390 · Pinchazo en Canta',
+    terrain: 'KTM 390 Adventure · Canta',
+    badge: 'Parche en ruta',
+    badgeColor: '#DC2626',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1524634126442-357e0eac3c14?auto=format&fit=crop&w=900&q=85',
+    alt: 'BMW GS en barro con AuxiPata estabilizando la rueda para reparación',
+    label: 'GS en barro · Reparación completa',
+    terrain: 'BMW GS · Barro · Serranía',
+    badge: 'Terreno',
+    badgeColor: '#F59E0B',
+  },
 ]
 
-const BADGE_FILTER = ['Todos', 'BMW', 'KTM', 'Caída', 'Con AuxiPata ✓']
+const BADGE_FILTER = ['Todos', 'Parche en ruta', 'Aceitar cadena', 'Terreno', 'Con AuxiPata ✓']
 
 export default function Gallery() {
   const [lightbox, setLightbox] = useState<typeof PHOTOS[0] | null>(null)
@@ -102,11 +94,11 @@ export default function Gallery() {
         >
           <span className="text-primary text-sm font-bold tracking-widest uppercase">Galería</span>
           <h2 className="text-4xl sm:text-5xl font-black mt-3">
-            BMW, KTM y las{' '}
-            <span className="text-gradient">rutas reales.</span>
+            Donde otros esperan auxilio,{' '}
+            <span className="text-gradient">tú reparas.</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-xl mx-auto mt-4">
-            Las motos más grandes del mundo también se caen sin el soporte correcto.
+            Parches en Canta, cadenas en Antioquía, frenos en Lunahuaná — el AuxiPata va donde tú vas.
           </p>
         </motion.div>
 
@@ -166,9 +158,9 @@ export default function Gallery() {
         </div>
 
         <p className="text-center text-gray-600 text-sm mt-8">
-          Usa{' '}
+          ¿Reparaste en ruta con el AuxiPata? Etiqueta{' '}
           <span className="text-primary font-medium">#AuxiPata</span>
-          {' '}en Instagram y TikTok para aparecer aquí 🏍️
+          {' '}en Instagram y apareces aquí.
         </p>
       </div>
 
