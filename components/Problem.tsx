@@ -1,7 +1,6 @@
 'use client'
-import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { AlertTriangle, Clock, MapPin } from 'lucide-react'
+import { AlertTriangle, Clock, MapPin, XCircle, CheckCircle2, Timer, Banknote, Mountain, Wrench, Link, Hammer } from 'lucide-react'
 
 const SCENARIOS = [
   { icon: AlertTriangle, text: 'Pinchaste la llanta a 60km del pueblo más cercano' },
@@ -9,35 +8,24 @@ const SCENARIOS = [
   { icon: MapPin,        text: 'La cadena seca en Antioquía — sin dónde elevar la rueda' },
 ]
 
-const PHOTOS = [
-  {
-    src: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=900&q=85',
-    alt: 'Moto adventure detenida en ruta de tierra — llanta pinchada sin soporte',
-    label: 'Pinchazo en ruta',
-    badge: 'Sin AuxiPata',
-    badgeColor: '#DC2626',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=85',
-    alt: 'KTM Adventure con rueda trasera elevada — cadena aceitada en ruta',
-    label: 'Rueda elevada · Cadena lista · Listo',
-    badge: 'Con AuxiPata ✓',
-    badgeColor: '#22C55E',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1609752272551-2e5ca1cc1fd6?auto=format&fit=crop&w=900&q=85',
-    alt: 'BMW R1250GS Adventure en ruta de sierra peruana lista para reparación',
-    label: 'BMW GS en sierra peruana',
-    badge: 'BMW GS',
-    badgeColor: '#1C69D4',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1609429019995-8c40f49535a5?auto=format&fit=crop&w=900&q=85',
-    alt: 'Motociclista reparando la moto en camino de tierra — parche de llanta en ruta',
-    label: 'Reparación en terreno difícil',
-    badge: 'En ruta',
-    badgeColor: '#FF6B00',
-  },
+const WITHOUT = [
+  { icon: Timer,    text: '3-4 horas esperando el arrastre' },
+  { icon: Banknote, text: 'Arrastre desde S/150 hasta S/400' },
+  { icon: MapPin,   text: 'Sin suelo plano para reparar' },
+  { icon: XCircle,  text: 'La cadena, no puedes girarla sola' },
+]
+
+const WITH = [
+  { icon: Timer,        text: 'Rueda elevada en menos de 2 minutos' },
+  { icon: Wrench,       text: 'Parcha la llanta en cualquier terreno' },
+  { icon: Link,         text: 'Gira la rueda a mano — aceita la cadena' },
+  { icon: Mountain,     text: 'Funciona en tierra, arena, piedra y barro' },
+]
+
+const USE_CASES = [
+  { icon: Wrench,  label: 'Parchar llanta', detail: 'Rueda trasera elevada · saca, parcha, monta y a rodar' },
+  { icon: Link,    label: 'Aceitar cadena', detail: 'Gira la rueda a mano · lubricante uniforme en toda la cadena' },
+  { icon: Hammer,  label: 'Reparaciones',   detail: 'Frenos, pastillas, rodamientos · tú decides dónde paras' },
 ]
 
 export default function Problem() {
@@ -81,39 +69,84 @@ export default function Problem() {
           ))}
         </motion.div>
 
-        {/* 2x2 photo grid */}
-        <div className="grid grid-cols-2 gap-4 mb-12">
-          {PHOTOS.map((photo, i) => (
-            <motion.div
-              key={photo.src}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="relative rounded-2xl overflow-hidden aspect-[4/3] group"
-            >
-              <Image
-                src={photo.src}
-                alt={photo.alt}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                sizes="(max-width: 768px) 50vw, 45vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-black/10" />
-              <div className="absolute top-3 left-3">
-                <span
-                  className="text-[11px] font-black px-2.5 py-1 rounded-full text-white"
-                  style={{ background: photo.badgeColor }}
-                >
-                  {photo.badge}
-                </span>
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 p-4">
-                <p className="text-white font-bold text-sm leading-tight">{photo.label}</p>
-              </div>
-            </motion.div>
-          ))}
+        {/* before / after comparison */}
+        <div className="grid md:grid-cols-2 gap-4 mb-12">
+          {/* WITHOUT */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative rounded-2xl overflow-hidden p-8"
+            style={{ background: 'linear-gradient(135deg, #1f0505 0%, #0f0000 100%)', border: '1px solid #7f1d1d55' }}
+          >
+            <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-red-900/10 -translate-y-1/2 translate-x-1/2" />
+            <span className="inline-flex items-center gap-1.5 text-xs font-black px-3 py-1 rounded-full bg-red-600 text-white mb-5">
+              <XCircle size={12} /> Sin AuxiPata
+            </span>
+            <h3 className="text-2xl font-black text-white mb-2">Quedas varado.</h3>
+            <p className="text-red-300/70 text-sm mb-6">Sin soporte, sin herramientas, sin opciones.</p>
+            <ul className="space-y-3">
+              {WITHOUT.map(({ icon: Icon, text }) => (
+                <li key={text} className="flex items-center gap-3 text-sm text-gray-400">
+                  <span className="w-7 h-7 rounded-full bg-red-900/40 flex items-center justify-center flex-shrink-0">
+                    <Icon size={13} className="text-red-400" />
+                  </span>
+                  {text}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* WITH */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="relative rounded-2xl overflow-hidden p-8"
+            style={{ background: 'linear-gradient(135deg, #021a06 0%, #010d03 100%)', border: '1px solid #14532d55' }}
+          >
+            <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-green-900/10 -translate-y-1/2 translate-x-1/2" />
+            <span className="inline-flex items-center gap-1.5 text-xs font-black px-3 py-1 rounded-full bg-green-600 text-white mb-5">
+              <CheckCircle2 size={12} /> Con AuxiPata ✓
+            </span>
+            <h3 className="text-2xl font-black text-white mb-2">Rueda arriba en 2 min.</h3>
+            <p className="text-green-300/70 text-sm mb-6">Posiciona, eleva y repara en cualquier ruta.</p>
+            <ul className="space-y-3">
+              {WITH.map(({ icon: Icon, text }) => (
+                <li key={text} className="flex items-center gap-3 text-sm text-gray-300">
+                  <span className="w-7 h-7 rounded-full bg-green-900/40 flex items-center justify-center flex-shrink-0">
+                    <Icon size={13} className="text-green-400" />
+                  </span>
+                  {text}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
         </div>
+
+        {/* use-case tiles */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="grid sm:grid-cols-3 gap-4 mb-12"
+        >
+          {USE_CASES.map(({ icon: Icon, label, detail }) => (
+            <div
+              key={label}
+              className="bg-brand-card border border-brand-border rounded-xl p-5 text-center hover:border-primary/30 transition-colors"
+            >
+              <div className="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center mx-auto mb-3">
+                <Icon size={18} className="text-primary" />
+              </div>
+              <p className="text-white font-bold mb-1">{label}</p>
+              <p className="text-gray-400 text-xs leading-relaxed">{detail}</p>
+            </div>
+          ))}
+        </motion.div>
 
         {/* testimony */}
         <motion.div
