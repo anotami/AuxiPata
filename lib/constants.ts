@@ -60,10 +60,10 @@ export const PRODUCTS = [
     price: PRICES.urban,
     features: [
       'Peso ultraligero 280g',
-      'Eleva la rueda para parchar y aceitar',
+      'Posiciona bajo el eje — sin herramientas',
+      'Eleva la rueda para parchar y aceitar cadena',
       'Compatible con scooters y motos urbanas',
       'Base TPU anti-deslizante',
-      'Anclaje con bridas de acero',
     ],
     badge: null,
     accent: '#4B5563',
@@ -74,11 +74,11 @@ export const PRODUCTS = [
     subtitle: 'Para Trail, Enduro y Grandes Aventuras',
     price: PRICES.adventure,
     features: [
-      'Eleva ruedas de motos hasta 220kg',
+      'Soporta motos hasta 300kg',
+      'Posiciona bajo el eje — sin herramientas',
       'Base TPU reforzada con diseño garra',
       'Estable en tierra, arena, piedra y barro',
-      'Sistema telescópico 40-70cm',
-      'Anclaje con bridas de acero inox',
+      'Sistema telescópico 25-45cm de altura',
     ],
     badge: 'Más vendido',
     accent: '#FF6B00',
@@ -185,12 +185,12 @@ export const FAQS = [
     a: 'Entrega en 24-48 horas en Lima Metropolitana. Para provincias (Arequipa, Cusco, Trujillo, Piura y más), 3-5 días hábiles. Envío gratis en Lima en todos los modelos.',
   },
   {
-    q: '¿Cómo se instala en la moto?',
-    a: 'Viene con bridas de acero inoxidable que se sujetan al chasis de tu moto sin herramientas ni modificaciones permanentes. En menos de 5 minutos queda instalado. Incluye instructivo con fotos paso a paso.',
+    q: '¿Cómo se usa en ruta?',
+    a: 'Lo colocas bajo el eje trasero de tu moto, extiendes el tubo telescópico y la rueda queda elevada. Sin herramientas, sin modificaciones. En menos de 2 minutos estás listo para parchar, aceitar o reparar. Incluye instructivo con fotos paso a paso.',
   },
   {
-    q: '¿Qué pasa si pesa demasiado (BMW GS, KTM 1290)?',
-    a: 'El modelo Adventure está diseñado para motos hasta 220kg. Para motos de mayor peso como la BMW R1250GS Adventure o KTM 1290 SAR, el soporte actúa en la zona del chasis y no necesita levantar toda la moto — solo eleva la rueda trasera del suelo.',
+    q: '¿Funciona con motos pesadas como BMW GS o KTM 1290?',
+    a: 'Sí. El modelo Adventure soporta hasta 300kg. Se coloca bajo el eje trasero y eleva únicamente la rueda — no levanta la moto entera. Compatible con BMW R1250GS Adventure, KTM 1290 Super Adventure y otras grandes adventure.',
   },
   {
     q: '¿Cómo funciona el sistema de referidos?',
@@ -205,18 +205,18 @@ export const FAQS = [
 export const HOW_IT_WORKS = [
   {
     step: '01',
-    title: 'Ancla',
-    desc: 'Fija el AuxiPata al chasis de tu moto con las bridas de acero inox. Sin herramientas, sin modificar nada. Va donde tú vayas.',
+    title: 'Posiciona',
+    desc: 'Coloca el AuxiPata bajo el eje trasero de tu moto. Sin herramientas, sin perforar nada — encaja en segundos en cualquier terreno.',
   },
   {
     step: '02',
     title: 'Eleva',
-    desc: 'Despliega el sistema telescópico. La rueda sube del suelo y queda libre. En tierra, arena, piedra o barro — no importa.',
+    desc: 'Extiende el tubo telescópico. La rueda trasera sube del suelo y queda libre para girar. Vale en tierra, arena, piedra o barro.',
   },
   {
     step: '03',
-    title: 'Trabaja',
-    desc: 'Parcha la llanta, aceita la cadena girándola a mano, cambia pastillas, ajusta frenos. Tu taller, en cualquier ruta del Perú.',
+    title: 'Repara',
+    desc: 'Parcha la llanta, aceita la cadena girándola a mano, cambia pastillas, ajusta frenos. Tu taller portátil en cualquier ruta.',
   },
 ]
 
@@ -229,7 +229,7 @@ export const FEATURES = [
   {
     icon: 'Ruler',
     title: 'Sistema Telescópico',
-    desc: 'Ajustable entre 40 y 70cm. Eleva la rueda trasera de cualquier moto, desde una PCX 150 hasta una BMW R1250GS.',
+    desc: 'Ajustable entre 25 y 45cm. Posiciona bajo el eje trasero y eleva la rueda de cualquier moto, desde una PCX hasta una GS 1250.',
   },
   {
     icon: 'Shield',

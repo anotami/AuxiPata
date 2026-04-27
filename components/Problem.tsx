@@ -9,33 +9,31 @@ const SCENARIOS = [
   { icon: MapPin,        text: 'La cadena seca en Antioquía — sin dónde elevar la rueda' },
 ]
 
-// Fotos de ruta / reparación en terreno difícil
-// → Reemplaza estos src con fotos reales de tu comunidad o foros
 const PHOTOS = [
   {
-    src: 'https://images.unsplash.com/photo-1504215680853-026ed2a45def?auto=format&fit=crop&w=900&q=85',
-    alt: 'BMW GS Adventure detenida en camino de tierra — llanta pinchada sin soporte',
+    src: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=900&q=85',
+    alt: 'Moto adventure detenida en ruta de tierra — llanta pinchada sin soporte',
     label: 'Pinchazo en ruta',
     badge: 'Sin AuxiPata',
     badgeColor: '#DC2626',
   },
   {
-    src: 'https://images.unsplash.com/photo-1547036967-23d11aacaee0?auto=format&fit=crop&w=900&q=85',
-    alt: 'KTM 1290 Super Adventure con AuxiPata elevando la rueda trasera para aceitar cadena',
-    label: 'Rueda elevada · Cadena aceitada · Listo',
+    src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=85',
+    alt: 'KTM Adventure con rueda trasera elevada — cadena aceitada en ruta',
+    label: 'Rueda elevada · Cadena lista · Listo',
     badge: 'Con AuxiPata ✓',
     badgeColor: '#22C55E',
   },
   {
-    src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=900&q=85',
-    alt: 'BMW R1250GS Adventure en ruta de sierra peruana — lista para reparación con AuxiPata',
+    src: 'https://images.unsplash.com/photo-1609752272551-2e5ca1cc1fd6?auto=format&fit=crop&w=900&q=85',
+    alt: 'BMW R1250GS Adventure en ruta de sierra peruana lista para reparación',
     label: 'BMW GS en sierra peruana',
     badge: 'BMW GS',
     badgeColor: '#1C69D4',
   },
   {
-    src: 'https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=900&q=85',
-    alt: 'Moto adventure en terreno difícil — parche de llanta en terreno con AuxiPata',
+    src: 'https://images.unsplash.com/photo-1609429019995-8c40f49535a5?auto=format&fit=crop&w=900&q=85',
+    alt: 'Motociclista reparando la moto en camino de tierra — parche de llanta en ruta',
     label: 'Reparación en terreno difícil',
     badge: 'En ruta',
     badgeColor: '#FF6B00',
@@ -101,7 +99,7 @@ export default function Problem() {
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                 sizes="(max-width: 768px) 50vw, 45vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-black/10" />
               <div className="absolute top-3 left-3">
                 <span
                   className="text-[11px] font-black px-2.5 py-1 rounded-full text-white"

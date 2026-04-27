@@ -16,11 +16,11 @@ export default function HowItWorks() {
           <span className="text-primary text-sm font-bold tracking-widest uppercase">Cómo funciona</span>
           <h2 className="text-4xl sm:text-5xl font-black mt-3">
             3 pasos.{' '}
-            <span className="text-gradient">Rueda arriba. A rodar.</span>
+            <span className="text-gradient">Rueda libre. A reparar.</span>
           </h2>
           <p className="text-gray-400 text-lg mt-4 max-w-xl mx-auto">
-            En menos de 2 minutos tienes la rueda elevada y puedes parchar,
-            aceitar la cadena o hacer cualquier reparación.
+            En menos de 2 minutos tienes la rueda trasera elevada y puedes
+            parchar, aceitar la cadena o hacer cualquier reparación en ruta.
           </p>
         </motion.div>
 
